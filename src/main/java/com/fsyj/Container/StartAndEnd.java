@@ -37,5 +37,6 @@ public class StartAndEnd extends Container {
         add(start);
         add(end);
         add(label);
+        add(new SelfStart());
     }
 }

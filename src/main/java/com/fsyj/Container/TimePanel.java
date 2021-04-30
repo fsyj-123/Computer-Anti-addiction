@@ -66,6 +66,5 @@ public class TimePanel extends Container {
         add(reSure1);
         add(restInterval);
         add(restI);
-        add(reSure2);
     }
 }

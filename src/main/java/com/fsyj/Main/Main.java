@@ -4,7 +4,10 @@ import com.fsyj.Frame.MainFrame;
 import com.fsyj.Util.PathUtil;
 import com.fsyj.Util.SelfCompiler;
 import com.fsyj.Util.SelfLogger;
+import com.tulskiy.keymaster.common.Provider;
 
+import javax.swing.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.net.URL;
 import java.util.Arrays;
@@ -18,16 +21,8 @@ public class Main {
         SelfLogger.getLogger().info("总程序启动");
         new MainFrame();
     }
-
-
-    private static String repaire(String path) {
-        System.out.println(path);
-        String result = "";
-        if (path.contains("file:")) {
-            result = path.split("file:/")[1];
-        }
-        result = result.replace("!", "");
-        System.out.println(result);
-        return result;
-    }
+//    public static void monitor() {
+//        Provider provider = Provider.getCurrentProvider(false);
+//        provider.register(KeyStroke.getKeyStroke(KeyEvent.VK_ALT,));
+//    }
 }
