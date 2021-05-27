@@ -33,30 +33,27 @@ public class TimePanel extends Container {
         JButton reSure1 = new JButton("确认1"); // 用于休息时长
         JButton reSure2 = new JButton("确认2"); // 用于设置休息间隔
         // 为两个按钮添加单击事件——更新timer的时间
-        ActionListener actionListener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String command = e.getActionCommand();
-                // 设置时间
-                if (reSure1.getText().equals(command)) { // 休息时长
-                    String text = restT.getText();
-                    if ("".equals(text)) {
-                        return;
-                    }
-                    Long time = Long.valueOf(text);
-                    long temp = time * Timer.PRE_MINUTES;
-                    Timer.self_timer.setRestTime(temp);
-                    SelfLogger.getLogger().info("设置休息时长：" + temp);
-                } else { // 休息间隔
-                    String text = restI.getText();
-                    if ("".equals(text)) {
-                        return;
-                    }
-                    Long time = Long.valueOf(text);
-                    long temp = time * Timer.PRE_MINUTES;
-                    Timer.self_timer.setRestInterval(temp);
-                    SelfLogger.getLogger().info("设置休息间隔：" + temp);
+        ActionListener actionListener = e -> {
+            String command = e.getActionCommand();
+            // 设置时间
+            if (reSure1.getText().equals(command)) { // 休息时长
+                String text = restT.getText();
+                if ("".equals(text)) {
+                    return;
                 }
+                Long time = Long.valueOf(text);
+                long temp = time * Timer.PRE_MINUTES;
+                Timer.self_timer.setRestTime(temp);
+                SelfLogger.getLogger().info("设置休息时长：" + temp);
+            } else { // 休息间隔
+                String text = restI.getText();
+                if ("".equals(text)) {
+                    return;
+                }
+                Long time = Long.valueOf(text);
+                long temp = time * Timer.PRE_MINUTES;
+                Timer.self_timer.setRestInterval(temp);
+                SelfLogger.getLogger().info("设置休息间隔：" + temp);
             }
         };
         reSure1.addActionListener(actionListener);
@@ -66,5 +63,6 @@ public class TimePanel extends Container {
         add(reSure1);
         add(restInterval);
         add(restI);
+        add(reSure2);
     }
 }

@@ -12,6 +12,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class Timer {
     public static ScheduledExecutorService threadPool;
+    public static Long startTime;
+    public static Long stopTime;
 
     static {
         threadPool = Executors.newScheduledThreadPool(2);
@@ -63,6 +65,8 @@ public class Timer {
             StartAndEnd.isStarted = true;
         }
         Long minutes = Timer.self_timer.getIntervalAsMinutes();
+        SelfLogger.getLogger().info("程序启动，休息时长为：{" +Timer.self_timer.getRestTimeAsMinutes()+"}，休息间隔为：{"+Timer.self_timer.getIntervalAsMinutes()+"}");
+        // 设置程序启动时间
         threadPool.schedule(new FrameThread(), minutes, TimeUnit.MINUTES);
     }
 }

@@ -1,12 +1,27 @@
-[INFO]2021-04-30 15:53:17[com.fsyj.Main.Main.main(Main.java:21)]-总程序启动
-[INFO]2021-04-30 15:53:28[com.fsyj.Container.StartAndEnd$2.actionPerformed(StartAndEnd.java:32)]-程序关闭
-[INFO]2021-04-30 16:02:18[com.fsyj.Main.Main.main(Main.java:21)]-总程序启动
-[INFO]2021-04-30 16:02:43[com.fsyj.Main.Main.main(Main.java:21)]-总程序启动
-[INFO]2021-04-30 16:02:54[com.fsyj.Container.StartAndEnd$2.actionPerformed(StartAndEnd.java:32)]-程序关闭
-[INFO]2021-04-30 16:03:46[com.fsyj.Main.Main.main(Main.java:21)]-总程序启动
-[INFO]2021-04-30 16:04:03[com.fsyj.Container.StartAndEnd$2.actionPerformed(StartAndEnd.java:32)]-程序关闭
-[INFO]2021-04-30 16:04:26[com.fsyj.Main.Main.main(Main.java:21)]-总程序启动
-[INFO]2021-04-30 16:04:39[com.fsyj.Container.StartAndEnd$2.actionPerformed(StartAndEnd.java:32)]-程序关闭
-[INFO]2021-04-30 16:04:53[com.fsyj.Main.Main.main(Main.java:21)]-总程序启动
-[INFO]2021-04-30 16:07:16[com.fsyj.Main.Main.main(Main.java:21)]-总程序启动
-[INFO]2021-04-30 16:07:34[com.fsyj.Container.StartAndEnd$2.actionPerformed(StartAndEnd.java:32)]-程序关闭
+[INFO]2021-05-27 14:33:37[com.fsyj.Main.Main.main(Main.java:21)]-总程序启动
+[INFO]2021-05-27 14:33:44[com.fsyj.Container.StartAndEnd$2.actionPerformed(StartAndEnd.java:35)]-程序关闭
+[INFO]2021-05-27 15:52:04[com.fsyj.Main.Main.main(Main.java:21)]-总程序启动
+[INFO]2021-05-27 15:52:24[com.fsyj.Container.TimePanel$1.actionPerformed(TimePanel.java:49)]-设置休息时长：60000
+[INFO]2021-05-27 15:52:27[com.fsyj.Container.StartAndEnd$2.actionPerformed(StartAndEnd.java:33)]-程序关闭
+[INFO]2021-05-27 15:56:22[com.fsyj.Main.Main.main(Main.java:21)]-总程序启动
+[INFO]2021-05-27 15:56:30[com.fsyj.Container.TimePanel$1.actionPerformed(TimePanel.java:49)]-设置休息时长：60000
+[INFO]2021-05-27 15:56:31[com.fsyj.Container.TimePanel$1.actionPerformed(TimePanel.java:58)]-设置休息间隔：60000
+[INFO]2021-05-27 15:56:35[com.fsyj.Util.Timer.restart(Timer.java:68)]-程序启动，休息时长为：{1}，休息间隔为：{1}
+[INFO]2021-05-27 15:58:35[com.fsyj.Util.FrameThread.start(FrameThread.java:37)]-{com.fsyj.Util.FrameThread} 调用此方法，islocked = {false}
+[INFO]2021-05-27 15:58:35[com.fsyj.Util.Timer.restart(Timer.java:68)]-程序启动，休息时长为：{1}，休息间隔为：{1}
+[INFO]2021-05-27 15:59:44[com.fsyj.Frame.LockButton$1.actionPerformed(LockButton.java:25)]-解锁按钮被点击
+[WARN]2021-05-27 15:59:44[com.fsyj.Util.SelfClassLoader.<clinit>(SelfClassLoader.java:30)]-java.lang.RuntimeException: 类文件还未设置
+[ERROR]2021-05-27 15:59:44[com.fsyj.Util.SelfClassLoader.loadUnlock(SelfClassLoader.java:44)]-java.lang.NullPointerException
+[INFO]2021-05-27 15:59:44[com.fsyj.Frame.LockButton$1.actionPerformed(LockButton.java:25)]-解锁按钮被点击
+[ERROR]2021-05-27 15:59:44[com.fsyj.Util.SelfClassLoader.loadUnlock(SelfClassLoader.java:44)]-java.lang.NullPointerException
+[INFO]2021-05-27 15:59:44[com.fsyj.Frame.LockButton$1.actionPerformed(LockButton.java:25)]-解锁按钮被点击
+[ERROR]2021-05-27 15:59:44[com.fsyj.Util.SelfClassLoader.loadUnlock(SelfClassLoader.java:44)]-java.lang.NullPointerException
+[INFO]2021-05-27 15:59:45[com.fsyj.Frame.LockButton$1.actionPerformed(LockButton.java:25)]-解锁按钮被点击
+[ERROR]2021-05-27 15:59:45[com.fsyj.Util.SelfClassLoader.loadUnlock(SelfClassLoader.java:44)]-java.lang.NullPointerException
+[INFO]2021-05-27 15:59:45[com.fsyj.Frame.LockButton$1.actionPerformed(LockButton.java:25)]-解锁按钮被点击
+[ERROR]2021-05-27 15:59:45[com.fsyj.Util.SelfClassLoader.loadUnlock(SelfClassLoader.java:44)]-java.lang.NullPointerException
+[INFO]2021-05-27 15:59:45[com.fsyj.Frame.LockButton$1.actionPerformed(LockButton.java:25)]-解锁按钮被点击
+[ERROR]2021-05-27 15:59:45[com.fsyj.Util.SelfClassLoader.loadUnlock(SelfClassLoader.java:44)]-java.lang.NullPointerException
+[INFO]2021-05-27 16:00:35[com.fsyj.Util.FrameThread.start(FrameThread.java:37)]-{com.fsyj.Util.FrameThread} 调用此方法，islocked = {false}
+[INFO]2021-05-27 16:00:35[com.fsyj.Util.Timer.restart(Timer.java:68)]-程序启动，休息时长为：{1}，休息间隔为：{1}
+[INFO]2021-05-27 16:00:41[com.fsyj.Container.StartAndEnd$2.actionPerformed(StartAndEnd.java:33)]-程序关闭

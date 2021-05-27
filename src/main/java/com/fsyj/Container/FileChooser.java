@@ -8,8 +8,6 @@ import com.fsyj.Util.UserFile;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 
 public class FileChooser extends Container {
@@ -22,57 +20,47 @@ public class FileChooser extends Container {
         JComboBox<String> box = new JComboBox<>();
         box.addItem("--选择锁屏模式--");
         box.addItem("朴素模式");
-        box.addItem("自定义模式");
         JButton musicFileSure = new JButton("确认");
         JButton unlockModelButton = new JButton("确认"); // 模式选择按钮
         musicOpen.setSize(10,30);
         // 添加模式选择响应事件
-        unlockModelButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        int selectedIndex = box.getSelectedIndex();
-                        if (selectedIndex == 0) {
-                            JOptionPane.showMessageDialog(null,"error","请选择锁屏模式",JOptionPane.ERROR_MESSAGE);
-                        } else if (selectedIndex == 1) {
-                            unlockModel = UnlockModel.PLAIN_MODEL;
-                        } else {
-                            // 自定义模式
-                            unlockModel = selfDefineModel();
-                        }
-                        SelfLogger.getLogger().info("选取模式" + selectedIndex + "选择的类" + unlockModel);
-                    }
-                }).start();
+        unlockModelButton.addActionListener(e -> new Thread(() -> {
+            int selectedIndex = box.getSelectedIndex();
+            if (selectedIndex == 0) {
+                JOptionPane.showMessageDialog(null,"error","请选择锁屏模式",JOptionPane.ERROR_MESSAGE);
+            } else if (selectedIndex == 1) {
+                unlockModel = UnlockModel.PLAIN_MODEL;
             }
-        });
-        musicOpen.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFileChooser musicFile = new JFileChooser();
-                musicFile.setName("选择音乐文件");
-                // 设置文件的可选择类型
-                musicFile.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-                musicFile.showDialog(new JLabel(), "选择");
-                // 设置文件过滤器
-                musicFile.addChoosableFileFilter(new FileFilter() {
-                    @Override
-                    public boolean accept(File f) {
-                        boolean accept = false;
-                        if (f.getName().contains(".mp3")) {
-                            accept = true;
-                        }
-                        return accept;
+//                        取消自定义模式
+//                        else {
+//                            // 自定义模式
+//                            unlockModel = selfDefineModel();
+//                        }
+            SelfLogger.getLogger().info("选取模式" + selectedIndex + "选择的类" + unlockModel);
+        }).start());
+        musicOpen.addActionListener(e -> {
+            JFileChooser musicFile = new JFileChooser();
+            musicFile.setName("选择音乐文件");
+            // 设置文件的可选择类型
+            musicFile.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+            musicFile.showDialog(new JLabel(), "选择");
+            // 设置文件过滤器
+            musicFile.addChoosableFileFilter(new FileFilter() {
+                @Override
+                public boolean accept(File f) {
+                    boolean accept = false;
+                    if (f.getName().contains(".mp3")) {
+                        accept = true;
                     }
+                    return accept;
+                }
 
-                    @Override
-                    public String getDescription() {
-                        return null;
-                    }
-                });
-                UserFile.modelFile.setMusicFile(musicFile.getSelectedFile());
-            }
+                @Override
+                public String getDescription() {
+                    return null;
+                }
+            });
+            UserFile.modelFile.setMusicFile(musicFile.getSelectedFile());
         });
 
         setLayout(new GridLayout(2, 2));

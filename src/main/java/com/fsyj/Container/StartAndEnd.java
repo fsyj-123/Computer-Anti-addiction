@@ -14,25 +14,21 @@ public class StartAndEnd extends Container {
         JButton start = new JButton("启动程序");
         JButton end = new JButton("结束程序");
         JLabel label = new JLabel();
-        start.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (isStarted) {
-                    System.out.println("yes");
-                    label.setText("程序已启动，请勿重复启动");
-                    return;
-                }
-                Timer.restart();
-                SelfLogger.getLogger().info("程序启动，休息时长为：{" +Timer.self_timer.getRestTimeAsMinutes()+"}，休息间隔为：{"+Timer.self_timer.getIntervalAsMinutes()+"}");
+        start.addActionListener(e -> {
+            if (isStarted) {
+                System.out.println("yes");
+                label.setText("程序已启动，请勿重复启动");
+                return;
             }
+            // 添加程序启动提醒
+            label.setText("程序已启动");
+            Timer.restart();
         });
-        end.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                SelfLogger.getLogger().info("程序关闭");
-                System.exit(1);
-            }
+        end.addActionListener(e -> {
+            SelfLogger.getLogger().info("程序关闭");
+            System.exit(1);
         });
+        // 增加暂停功能
         setLayout(new FlowLayout(FlowLayout.CENTER, 5, 20));
         add(start);
         add(end);
